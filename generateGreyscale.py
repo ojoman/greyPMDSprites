@@ -8,7 +8,7 @@ for file in os.listdir(directory):
 	if filename.endswith(".png"): 
 		newName = filename.replace("Normal", "Grey")
 		print(filename)
-		os.system("magick ./Normal/"+filename+" -grayscale Rec709luminance ./Grey/" + newName)
+		os.system("convert ./Normal/"+filename+" -define png:color-type=6 -grayscale Rec709luminance ./Grey/" + newName)
 		continue
 	else:
 		continue
